@@ -27,5 +27,6 @@ pub enum Commands {
     /// Cleans destination of uncleanly-copied files.
     Clean(cmd::clean::Args),
 
+    /// Filter tracks to copy over to a destination.
     Filter(cmd::filter::Args),
 }

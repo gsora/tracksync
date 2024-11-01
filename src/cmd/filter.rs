@@ -6,7 +6,7 @@ const DEFAULT_FILTER: &'static str = include_str!("default_filter.rhai");
 
 #[derive(ClapArgs)]
 pub struct Args {
-    /// Path where to store tracksync's database, as well as music files.
+    /// Path where tracksync database is stored.
     #[arg(long)]
     pub destination: Option<String>,
 
@@ -16,7 +16,7 @@ pub struct Args {
 
     /// Read filtering code from the specified file path, and store it in the database overwriting previously
     /// stored filters.
-    /// This option will not open $EDITOR.
+    /// If this flag is provided, $EDITOR will not be open: omit this flag to edit your filters in-place.
     #[arg(long)]
     pub file: Option<String>,
 }
