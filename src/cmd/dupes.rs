@@ -5,7 +5,7 @@ use std::collections::{hash_map, hash_set};
 
 #[derive(ClapArgs, Debug)]
 pub struct Args {
-    /// Directory in which tunesdirector will store its local database.
+    /// Directory in which tracksync will store its local database.
     #[arg(short, long, default_value_t = db::default_database_dir().to_str().unwrap().to_owned())]
     pub database_path: String,
 }

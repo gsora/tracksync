@@ -10,11 +10,11 @@ use model::FileState;
 
 #[derive(ClapArgs, Debug)]
 pub struct Args {
-    /// Directory in which tunesdirector will store its local database.
+    /// Directory in which tracksync will store its local database.
     #[arg(short, long, default_value_t = db::default_database_dir().to_str().unwrap().to_owned())]
     pub database_path: String,
 
-    /// A path in which tunesdirector will look for music files.
+    /// A path in which tracksync will look for music files.
     /// Specify more than one for multiple sources.
     #[arg(short, long = "source", value_name = "SOURCE", action = clap::ArgAction::Append)]
     pub sources: Option<Vec<String>>,

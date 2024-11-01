@@ -12,11 +12,11 @@ use std::os::unix::fs::MetadataExt;
 
 #[derive(ClapArgs)]
 pub struct Args {
-    /// Path where to look for tunesdirector source data.
+    /// Path where to look for tracksync source data.
     #[arg(short, long, default_value_t = db::default_database_dir().to_str().unwrap().to_owned())]
     pub database_path: String,
 
-    /// Path where to store tunesdirector's database, as well as music files.
+    /// Path where to store tracksync's database, as well as music files.
     #[arg(long)]
     pub destination: Option<String>,
 

@@ -6,7 +6,7 @@ const DEFAULT_FILTER: &'static str = include_str!("default_filter.rhai");
 
 #[derive(ClapArgs)]
 pub struct Args {
-    /// Path where to store tunesdirector's database, as well as music files.
+    /// Path where to store tracksync's database, as well as music files.
     #[arg(long)]
     pub destination: Option<String>,
 

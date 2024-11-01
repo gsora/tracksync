@@ -6,7 +6,7 @@ use crate::model;
 
 static MIGRATOR: Migrator = sqlx::migrate!("database/migrations/local");
 
-static DATABASE_DEFAULT_NAME: &str = "tunesdirector.db";
+static DATABASE_DEFAULT_NAME: &str = "tracksync.db";
 
 pub struct Instance {
     pool: SqlitePool,
