@@ -153,6 +153,8 @@ fn track_hash(track: &Track) -> String {
     sha256::digest(sb.string().unwrap())
 }
 
+// Incredibly ugly way to remove all characters sqlite3's FTS5 hates.
+// I am ashamed of my self, but as they say, if it works it isn't stupid.
 fn clean(s: String, is_file: bool) -> String {
     let mut s = s.clone();
 
@@ -190,6 +192,7 @@ fn clean(s: String, is_file: bool) -> String {
     s
 }
 
+#[allow(dead_code)]
 pub struct Album {
     pub title: String,
     pub artist: String,
