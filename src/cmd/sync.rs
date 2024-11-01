@@ -28,6 +28,10 @@ pub struct Args {
     /// print what tracks would be copied over.
     #[arg(long, default_value_t = false)]
     pub dry_run: bool,
+
+    /// Instead of copying the files over to the specified destination, create an hardlink.
+    #[arg(long, default_value_t = false)]
+    pub link: bool,
 }
 
 impl Args {
@@ -92,7 +96,15 @@ pub async fn run(args: Args) -> Result<()> {
         run_delete(&dest_db, &dest_dir, reverse_diff, filters.as_ref()).await?
     }
 
-    run_copy(&local_db, &dest_db, &dest_dir, diff, filters.as_ref()).await?;
+    run_copy(
+        &local_db,
+        &dest_db,
+        &dest_dir,
+        diff,
+        filters.as_ref(),
+        args.link,
+    )
+    .await?;
 
     Ok(())
 }
@@ -215,6 +227,7 @@ async fn run_copy(
     dest_dir: &String,
     diff: Vec<String>,
     filters: Option<&Vec<crate::filter::ScriptRuntime>>,
+    link: bool,
 ) -> Result<()> {
     let diff_len = diff.len();
 
@@ -235,7 +248,7 @@ async fn run_copy(
     total_bar.tick();
 
     for track in tracks {
-        copy(track, &dest_db, &dest_dir, &mp).await?;
+        copy(track, &dest_db, &dest_dir, &mp, link).await?;
         total_bar.inc(1);
     }
 
@@ -357,6 +370,7 @@ async fn copy(
     dest_db: &db::Instance,
     dest_dir: &String,
     mp: &indicatif::MultiProgress,
+    link: bool,
 ) -> Result<()> {
     let track_storage_path = track.storage_path(&dest_dir);
     let sp = std::path::Path::new(&track_storage_path);
@@ -405,22 +419,26 @@ async fn copy(
 
     let opts = CopyOptions::new().overwrite(true);
 
-    match copy_with_progress(
-        track.file_path.clone(),
-        track_storage_path.clone(),
-        &opts,
-        |ph| {
-            bar.set_position(ph.copied_bytes);
-        },
-    ) {
-        std::result::Result::Ok(_) => {}
-        Err(err) => {
-            return Err(error::Error::CopyError(err)).with_context(|| {
-                format!("Cannot copy {} to {}", track.file_path, track_storage_path)
-            });
-        }
-    };
-    // .with_context(|| format!("Cannot copy {} to {}", track.file_path, track_storage_path))?;
+    if link {
+        std::fs::hard_link(track.file_path.clone(), track_storage_path.clone())?;
+    } else {
+        match copy_with_progress(
+            track.file_path.clone(),
+            track_storage_path.clone(),
+            &opts,
+            |ph| {
+                bar.set_position(ph.copied_bytes);
+            },
+        ) {
+            std::result::Result::Ok(_) => {}
+            Err(err) => {
+                return Err(error::Error::CopyError(err)).with_context(|| {
+                    format!("Cannot copy {} to {}", track.file_path, track_storage_path)
+                });
+            }
+        };
+        // .with_context(|| format!("Cannot copy {} to {}", track.file_path, track_storage_path))?;
+    }
 
     // step 3: update the destination track with the new state
     dest_track.file_state = crate::model::FileState::Copied;
