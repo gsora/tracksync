@@ -1,0 +1,32 @@
+{
+  "db_name": "SQLite",
+  "query": "\n            SELECT * FROM albums;\n            ",
+  "describe": {
+    "columns": [
+      {
+        "name": "title",
+        "ordinal": 0,
+        "type_info": "Text"
+      },
+      {
+        "name": "artist",
+        "ordinal": 1,
+        "type_info": "Text"
+      },
+      {
+        "name": "format",
+        "ordinal": 2,
+        "type_info": "Text"
+      }
+    ],
+    "parameters": {
+      "Right": 0
+    },
+    "nullable": [
+      false,
+      false,
+      false
+    ]
+  },
+  "hash": "bc56cdf6e63bf49e2d59a1dd65d769f19ef009ce6caa009e761069d5858252a3"
+}

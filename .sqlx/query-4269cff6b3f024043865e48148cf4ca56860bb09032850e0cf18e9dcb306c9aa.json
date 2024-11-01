@@ -1,0 +1,20 @@
+{
+  "db_name": "SQLite",
+  "query": "SELECT * FROM directories;",
+  "describe": {
+    "columns": [
+      {
+        "name": "directory",
+        "ordinal": 0,
+        "type_info": "Text"
+      }
+    ],
+    "parameters": {
+      "Right": 0
+    },
+    "nullable": [
+      false
+    ]
+  },
+  "hash": "4269cff6b3f024043865e48148cf4ca56860bb09032850e0cf18e9dcb306c9aa"
+}

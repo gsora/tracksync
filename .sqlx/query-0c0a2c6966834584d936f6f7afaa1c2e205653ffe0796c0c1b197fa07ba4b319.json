@@ -1,0 +1,12 @@
+{
+  "db_name": "SQLite",
+  "query": "\n            INSERT OR REPLACE INTO tracks (\n                track_id,\n                title,\n                artist,\n                album,\n                number,\n                file_path,\n                disc_number,\n                disc_total,\n                file_state,\n                extension\n            ) VALUES (\n                ?1,\n                ?2,\n                ?3,\n                ?4,\n                ?5,\n                ?6,\n                ?7,\n                ?8,\n                ?9,\n                ?10\n            );\n            ",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Right": 10
+    },
+    "nullable": []
+  },
+  "hash": "0c0a2c6966834584d936f6f7afaa1c2e205653ffe0796c0c1b197fa07ba4b319"
+}

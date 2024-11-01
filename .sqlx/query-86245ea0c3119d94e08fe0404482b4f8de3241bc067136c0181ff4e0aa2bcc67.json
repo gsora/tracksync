@@ -1,0 +1,80 @@
+{
+  "db_name": "SQLite",
+  "query": "\n            SELECT * FROM tracks WHERE file_state = ?1;\n            ",
+  "describe": {
+    "columns": [
+      {
+        "name": "id",
+        "ordinal": 0,
+        "type_info": "Int64"
+      },
+      {
+        "name": "track_id",
+        "ordinal": 1,
+        "type_info": "Text"
+      },
+      {
+        "name": "title",
+        "ordinal": 2,
+        "type_info": "Text"
+      },
+      {
+        "name": "artist",
+        "ordinal": 3,
+        "type_info": "Text"
+      },
+      {
+        "name": "album",
+        "ordinal": 4,
+        "type_info": "Text"
+      },
+      {
+        "name": "number",
+        "ordinal": 5,
+        "type_info": "Int64"
+      },
+      {
+        "name": "disc_number",
+        "ordinal": 6,
+        "type_info": "Int64"
+      },
+      {
+        "name": "disc_total",
+        "ordinal": 7,
+        "type_info": "Int64"
+      },
+      {
+        "name": "file_state",
+        "ordinal": 8,
+        "type_info": "Int64"
+      },
+      {
+        "name": "file_path",
+        "ordinal": 9,
+        "type_info": "Text"
+      },
+      {
+        "name": "extension",
+        "ordinal": 10,
+        "type_info": "Text"
+      }
+    ],
+    "parameters": {
+      "Right": 1
+    },
+    "nullable": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "hash": "86245ea0c3119d94e08fe0404482b4f8de3241bc067136c0181ff4e0aa2bcc67"
+}

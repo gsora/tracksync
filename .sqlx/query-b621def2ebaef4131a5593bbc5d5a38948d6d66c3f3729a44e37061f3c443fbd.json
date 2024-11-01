@@ -1,0 +1,32 @@
+{
+  "db_name": "SQLite",
+  "query": "\n                SELECT artist, title, count(*) as count FROM albums\n                GROUP BY artist, title\n                HAVING count > 1;\n            ",
+  "describe": {
+    "columns": [
+      {
+        "name": "artist",
+        "ordinal": 0,
+        "type_info": "Text"
+      },
+      {
+        "name": "title",
+        "ordinal": 1,
+        "type_info": "Text"
+      },
+      {
+        "name": "count",
+        "ordinal": 2,
+        "type_info": "Int64"
+      }
+    ],
+    "parameters": {
+      "Right": 0
+    },
+    "nullable": [
+      false,
+      false,
+      false
+    ]
+  },
+  "hash": "b621def2ebaef4131a5593bbc5d5a38948d6d66c3f3729a44e37061f3c443fbd"
+}

@@ -1,0 +1,80 @@
+{
+  "db_name": "SQLite",
+  "query": "\n                select * from tracks where artist = ?2 and album = ?1 group by extension;\n            ",
+  "describe": {
+    "columns": [
+      {
+        "name": "id",
+        "ordinal": 0,
+        "type_info": "Int64"
+      },
+      {
+        "name": "track_id",
+        "ordinal": 1,
+        "type_info": "Text"
+      },
+      {
+        "name": "title",
+        "ordinal": 2,
+        "type_info": "Text"
+      },
+      {
+        "name": "artist",
+        "ordinal": 3,
+        "type_info": "Text"
+      },
+      {
+        "name": "album",
+        "ordinal": 4,
+        "type_info": "Text"
+      },
+      {
+        "name": "number",
+        "ordinal": 5,
+        "type_info": "Int64"
+      },
+      {
+        "name": "disc_number",
+        "ordinal": 6,
+        "type_info": "Int64"
+      },
+      {
+        "name": "disc_total",
+        "ordinal": 7,
+        "type_info": "Int64"
+      },
+      {
+        "name": "file_state",
+        "ordinal": 8,
+        "type_info": "Int64"
+      },
+      {
+        "name": "file_path",
+        "ordinal": 9,
+        "type_info": "Text"
+      },
+      {
+        "name": "extension",
+        "ordinal": 10,
+        "type_info": "Text"
+      }
+    ],
+    "parameters": {
+      "Right": 2
+    },
+    "nullable": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "hash": "90d659e4ebb83559ac94ba4618a065c5d9966e99d5c318c5b8f9dcaa670ae5b2"
+}

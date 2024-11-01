@@ -1,0 +1,12 @@
+{
+  "db_name": "SQLite",
+  "query": "INSERT OR REPLACE INTO directories (directory) VALUES (?1);",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Right": 1
+    },
+    "nullable": []
+  },
+  "hash": "9bf2fda97d829ad09e463504c964619c055032255c4b8c1919c83cba24cd2739"
+}

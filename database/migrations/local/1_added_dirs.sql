@@ -1,0 +1,3 @@
+CREATE TABLE IF NOT EXISTS directories (
+    directory TEXT PRIMARY KEY NOT NULL
+);

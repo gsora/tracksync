@@ -1,0 +1,80 @@
+{
+  "db_name": "SQLite",
+  "query": "SELECT * from tracks;",
+  "describe": {
+    "columns": [
+      {
+        "name": "id",
+        "ordinal": 0,
+        "type_info": "Int64"
+      },
+      {
+        "name": "track_id",
+        "ordinal": 1,
+        "type_info": "Text"
+      },
+      {
+        "name": "title",
+        "ordinal": 2,
+        "type_info": "Text"
+      },
+      {
+        "name": "artist",
+        "ordinal": 3,
+        "type_info": "Text"
+      },
+      {
+        "name": "album",
+        "ordinal": 4,
+        "type_info": "Text"
+      },
+      {
+        "name": "number",
+        "ordinal": 5,
+        "type_info": "Int64"
+      },
+      {
+        "name": "disc_number",
+        "ordinal": 6,
+        "type_info": "Int64"
+      },
+      {
+        "name": "disc_total",
+        "ordinal": 7,
+        "type_info": "Int64"
+      },
+      {
+        "name": "file_state",
+        "ordinal": 8,
+        "type_info": "Int64"
+      },
+      {
+        "name": "file_path",
+        "ordinal": 9,
+        "type_info": "Text"
+      },
+      {
+        "name": "extension",
+        "ordinal": 10,
+        "type_info": "Text"
+      }
+    ],
+    "parameters": {
+      "Right": 0
+    },
+    "nullable": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "hash": "f1349b72ca08058d2503c7348ee66ef638dfc1c3ce09cfd2167c01237ed25840"
+}

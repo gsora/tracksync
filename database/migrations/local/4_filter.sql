@@ -1,0 +1,2 @@
+ALTER TABLE state 
+ADD COLUMN filter TEXT;

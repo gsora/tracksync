@@ -1,0 +1,12 @@
+{
+  "db_name": "SQLite",
+  "query": "\n            update state set filter = ?1;",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Right": 1
+    },
+    "nullable": []
+  },
+  "hash": "678a980b3a8e4c7fb23225b9f14e5b752bd67c1169618c36bc67785b3fc2be06"
+}

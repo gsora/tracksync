@@ -1,0 +1,12 @@
+{
+  "db_name": "SQLite",
+  "query": "\n            INSERT INTO state (\n                version,\n                is_external\n            ) VALUES (\n                ?1,\n                ?2\n            );\n            ",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Right": 2
+    },
+    "nullable": []
+  },
+  "hash": "186c1e745f338479c3b44204587723b32b6f2f9b1d78d831e38f52cc997ff868"
+}

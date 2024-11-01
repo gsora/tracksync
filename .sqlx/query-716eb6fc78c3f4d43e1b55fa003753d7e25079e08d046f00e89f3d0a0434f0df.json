@@ -1,0 +1,20 @@
+{
+  "db_name": "SQLite",
+  "query": "SELECT file_path FROM tracks where file_path LIKE ?1",
+  "describe": {
+    "columns": [
+      {
+        "name": "file_path",
+        "ordinal": 0,
+        "type_info": "Text"
+      }
+    ],
+    "parameters": {
+      "Right": 1
+    },
+    "nullable": [
+      false
+    ]
+  },
+  "hash": "716eb6fc78c3f4d43e1b55fa003753d7e25079e08d046f00e89f3d0a0434f0df"
+}

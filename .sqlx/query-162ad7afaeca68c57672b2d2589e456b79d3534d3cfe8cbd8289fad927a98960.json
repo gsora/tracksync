@@ -1,0 +1,20 @@
+{
+  "db_name": "SQLite",
+  "query": "\n                select filter from state;\n            ",
+  "describe": {
+    "columns": [
+      {
+        "name": "filter",
+        "ordinal": 0,
+        "type_info": "Text"
+      }
+    ],
+    "parameters": {
+      "Right": 0
+    },
+    "nullable": [
+      true
+    ]
+  },
+  "hash": "162ad7afaeca68c57672b2d2589e456b79d3534d3cfe8cbd8289fad927a98960"
+}

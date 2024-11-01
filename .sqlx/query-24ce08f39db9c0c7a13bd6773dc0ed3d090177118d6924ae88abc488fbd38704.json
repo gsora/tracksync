@@ -1,0 +1,20 @@
+{
+  "db_name": "SQLite",
+  "query": "\n        SELECT is_external FROM state GROUP BY version;\n        ",
+  "describe": {
+    "columns": [
+      {
+        "name": "is_external",
+        "ordinal": 0,
+        "type_info": "Bool"
+      }
+    ],
+    "parameters": {
+      "Right": 0
+    },
+    "nullable": [
+      true
+    ]
+  },
+  "hash": "24ce08f39db9c0c7a13bd6773dc0ed3d090177118d6924ae88abc488fbd38704"
+}
