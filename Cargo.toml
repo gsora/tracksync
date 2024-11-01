@@ -2,6 +2,8 @@
 name = "tracksync"
 version = "0.1.0"
 edition = "2021"
+description = "A command-line tool to manage music library syncing to neatly ordered directories."
+license-file = "LICENSE"
 
 [profile.release]
 strip = true  # Automatically strip symbols from the binary.
