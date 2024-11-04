@@ -13,7 +13,13 @@ Pass `-h` to each subcommand to understand how to use it!
 
 `tracksync` can also create hardlinks instead of copies of your files: pass the `--link` flag to `sync` to do so.
 
-## Compiling
+## Installing
+
+```sh
+cargo install tracksync
+```
+
+### From sources
 
 You need a [Rust](https://rustup.rs/) compiler.
 
